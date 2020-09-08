@@ -8,8 +8,11 @@ pipeline {
         }
     }
     post {
-        always {
-            rocketSend channel: 'general', message: ''
+        success {
+            rocketSend 'Sucess!'
+        }
+        failure {
+            rocketSend 'Build Failed!'
         }
     }
 }
